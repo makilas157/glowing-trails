@@ -37,6 +37,7 @@ export default function CursorTrail() {
 
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
+        if (!p) continue;
         const t = (now - p.born) / p.life;
         if (t >= 1) {
           p.el.remove();
